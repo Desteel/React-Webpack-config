@@ -1,0 +1,1 @@
+My Webpack 4 config for React
