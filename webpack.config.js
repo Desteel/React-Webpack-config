@@ -13,15 +13,15 @@ const images = require('./webpack_config/images');
 const fonts = require('./webpack_config/fonts');
 
 const PATHS = {
-	source: path.join(__dirname, 'app/src'),
-    build: path.join(__dirname, 'app/dist')
+	source: path.join(__dirname, 'App/src'),
+    build: path.join(__dirname, 'App/dist')
 };
 
 const _common = merge([
     {
 		mode: 'production',
         entry: {
-			'index': PATHS.source + '/index.js',
+			'index': `${PATHS.source}/index.js`,
 		},
         output: {
 			path: PATHS.build,
@@ -56,17 +56,18 @@ const _common = merge([
 		},
         plugins: [
 			new HtmlWebpackPlugin({
-				//favicon: '_app/favicon.png',
+				favicon: `${PATHS.source}/favicon.ico`,
 				filename: 'index.html',
 				chunks: ['index', 'common'],
-				template: PATHS.source + '/index.pug',
+				template: `${PATHS.source}/index.pug`,
 			}),	
 			
 			new webpack.ProvidePlugin({
 				$: 'jquery',	 
 				jQuery: 'jquery',
-				'React': 'react',
-				'ReactDOM': 'react-dom'
+				React: 'react',
+				ReactDOM: 'react-dom',
+				styled: 'styled-components'
 			}),
 		],
 	},	
