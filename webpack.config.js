@@ -13,8 +13,8 @@ const images = require('./webpack_config/images');
 const fonts = require('./webpack_config/fonts');
 
 const PATHS = {
-	source: path.join(__dirname, 'App/src'),
-    build: path.join(__dirname, 'App/dist')
+	source: path.join(__dirname, 'AddressBook/src'),
+    build: path.join(__dirname, 'AddressBook/dist')
 };
 
 const _common = merge([
