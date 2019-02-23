@@ -9,7 +9,7 @@ const devserver = require('./webpack_config/devserver');
 const css = require('./webpack_config/css');
 const extractCSS = require('./webpack_config/css.extract');
 const babel = require('./webpack_config/babel');
-const images = require('./webpack_config/images');
+const files = require('./webpack_config/files');
 const fonts = require('./webpack_config/fonts');
 
 const PATHS = {
@@ -72,7 +72,7 @@ const _common = merge([
 		],
 	},	
     pug(),
-	images(),
+	files(),
 	fonts(),
 	babel()
 ]);
